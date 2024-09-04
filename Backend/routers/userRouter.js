@@ -29,10 +29,9 @@ router.post('/register', async (req, res) => {
         const user = await newUser.save();
 
         const token = createToken(user._id);
-        res.cookie("jwt", token, {
+        res.cookie('jwt', token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
-            domain: '.onrender.com',
         });
 
         const cookie = req.cookies['jwt'];
@@ -62,10 +61,9 @@ router.post('/login', async (req, res) => {
 
         const token = createToken(user._id);
 
-        res.cookie("jwt", token, {
+        res.cookie('jwt', token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
-            domain: '.onrender.com',
         });
 
         const cookie = req.cookies['jwt'];
