@@ -94,7 +94,7 @@ export class SeatSelectionComponent {
   email = '';
   //login User details fatch & email store
   ngOnInit(): void {
-    this.http.get('https://mywebpage-backend.onrender.com/api/user', { withCredentials: true })
+    this.http.get('https://bookmyshow-backend-q1x9.onrender.com/api/user', { withCredentials: true })
       .subscribe(
         (res: any) => {
           this.email = `${res.email}`;
@@ -105,7 +105,7 @@ export class SeatSelectionComponent {
   }
 
   getBookedSeats(movieName: string,showTime: string) {
-    this.http.get<any[]>(`https://mywebpage-backend.onrender.com/api/booking-seat?movieName=${movieName}&showTime=${showTime}`)
+    this.http.get<any[]>(`https://bookmyshow-backend-q1x9.onrender.com/api/booking-seat?movieName=${movieName}&showTime=${showTime}`)
       .subscribe(data => {
         this.bookedSeats = data;
         console.log(this.bookedSeats);
@@ -129,7 +129,7 @@ export class SeatSelectionComponent {
 
 
   postBookingData() {
-    const apiUrl = 'https://mywebpage-backend.onrender.com/api/bookings'; // Replace with your API URL
+    const apiUrl = 'https://bookmyshow-backend-q1x9.onrender.com/api/bookings'; // Replace with your API URL
     this.http.post(apiUrl, this.bookingDetails)
       .subscribe({
         next: (response) => {
