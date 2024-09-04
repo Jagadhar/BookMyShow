@@ -57,7 +57,7 @@ export class DashboardComponent {
   bookings: any[] = [];
   ngOnInit(): void {
     //login User details fatch & show 
-    this.http.get('https://mywebpage-backend.onrender.com/api/user', { withCredentials: true })
+    this.http.get('https://bookmyshow-backend-q1x9.onrender.com/api/user', { withCredentials: true })
       .subscribe((res: any) => {
         this.name = `${res.name}`;
         this.phone = `${res.phone}`;
@@ -72,7 +72,7 @@ export class DashboardComponent {
 
   getBookingsByUserId(): void {
     const userId = this.email;
-    const url = `https://mywebpage-backend.onrender.com/api/bookings?userId=${userId}`;
+    const url = `https://bookmyshow-backend-q1x9.onrender.com/api/bookings?userId=${userId}`;
     this.http.get<any[]>(url)
       .subscribe( data => {
           this.bookings = data;
@@ -85,14 +85,14 @@ export class DashboardComponent {
 
   //logout function
   logout(): void {
-    this.http.post('https://mywebpage-backend.onrender.com/api/logout', {},
+    this.http.post('https://bookmyshow-backend-q1x9.onrender.com/api/logout', {},
       { withCredentials: true })
       .subscribe(() => this.authenticated = false);
   }
 
   //Booking status update
   updateStatus(bookingId: string, status: string) {
-    const url = `https://mywebpage-backend.onrender.com/api/bookings/${bookingId}`;
+    const url = `https://bookmyshow-backend-q1x9.onrender.com/api/bookings/${bookingId}`;
     this.http.put(url, { status }).subscribe({
       next: (response) => {
         console.log('Status updated successfully', response);
