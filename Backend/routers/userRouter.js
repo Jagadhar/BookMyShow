@@ -38,6 +38,8 @@ router.post('/register', async (req,res) => {
         res.cookie("jwt", token,{
             httpOnly:true,
             maxAge:24*60*60*1000,
+            sameSite: 'None', // Necessary for cross-origin cookies
+            secure: true // Ensures the cookie is only sent over HTTPS
         });
     
         res.send({
@@ -67,6 +69,8 @@ router.post('/login', async (req,res) =>{
     res.cookie("jwt", token,{
         httpOnly:true,
         maxAge:24*60*60*1000,
+        sameSite: 'None', // Necessary for cross-origin cookies
+        secure: true // Ensures the cookie is only sent over HTTPS
     });
 
     res.send({
