@@ -32,9 +32,7 @@ router.post('/register', async (req, res) => {
         res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
-            secure: process.env.NODE_ENV === 'production', // Only set secure in production
-            sameSite: 'None', // Allow cross-site cookies
-            domain: '.onrender.com', // Allow cookies to be sent to all subdomains of onrender.com
+            domain: '.onrender.com',
         });
 
         const cookie = req.cookies['jwt'];
@@ -67,9 +65,7 @@ router.post('/login', async (req, res) => {
         res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
-            secure: process.env.NODE_ENV === 'production', // Only set secure in production
-            sameSite: 'None', // Allow cross-site cookies
-            domain: '.onrender.com', // Allow cookies to be sent to all subdomains of onrender.com
+            domain: '.onrender.com',
         });
 
         const cookie = req.cookies['jwt'];
