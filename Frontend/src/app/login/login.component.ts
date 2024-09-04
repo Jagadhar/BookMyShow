@@ -39,7 +39,7 @@ export class LoginComponent {
       Swal.fire('Error','Please enter a valid email address','error');
     }
     else{
-      this.http.post('https://mywebpage-backend.onrender.com/api/login',user,{
+      this.http.post('https://bookmyshow-backend-q1x9.onrender.com/api/login',user,{
         withCredentials:true
       })
       .subscribe((res) => {
