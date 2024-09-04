@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit{
  }
 
   logout():void{
-    this.http.post('https://mywebpage-backend.onrender.com/api/logout',{},
+    this.http.post('https://bookmyshow-backend-q1x9.onrender.com/api/logout',{},
     {withCredentials: true})
     .subscribe(() => this.authenticated = false);
   }
