@@ -3,6 +3,8 @@ import { UserService } from '../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Emitters } from '../Emitters/Emitter';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +25,7 @@ export class DashboardComponent {
 
   // booking Details..........
   bookingDetails: any;
-  constructor(private userService: UserService, private http: HttpClient) {
+  constructor(private userService: UserService, private http: HttpClient , private router:Router) {
     const bookingData = this.userService.getBookingDetails();
     bookingData.subscribe({
       next: (bookingData: any) => {
@@ -105,6 +107,7 @@ export class DashboardComponent {
 
   //auto page reload
   reloadPage() {
-    window.location.reload();
+    Swal.fire("Booking cancel successful");
+    this.router.navigate(['/home']);
   }
 }
