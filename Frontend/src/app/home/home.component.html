@@ -1,0 +1,83 @@
+<!-- Banner -->
+<div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <!-- <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="2" aria-label="Slied 3"></button> -->
+        <button *ngFor="let image of imageBanner; let i = index" type="button" data-bs-target="#carouselBanner" [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'Slide ' + (i + 1)"></button>
+    </div>
+    <div class="carousel-inner rounded-4">
+        <div *ngFor="let image of imageBanner; let i=index" class="carousel-item" [class.active]="i===0">
+            <img [src]="image" class="d-block w-100" alt="Image {{i+1}}">
+        </div>
+        <!-- <div *ngFor="let image of imageBanner" class="carousel-item active" data-bs-interval="6000">
+            <img [src]="image" class="d-block w-100">
+        </div> -->
+        <!-- <div class="carousel-item active" data-bs-interval="5000">
+            <img src="../../assets/banner1.avif" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../assets/banner2.avif" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/banner3.avif" class="d-block w-100" alt="">
+        </div> -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Recommendation -->
+<div class="Re-outer">
+    {{message}}
+    <div class="Re-inner">
+        <div class="Re-text">
+            <h4 class="Re-headline fs-4 fw-normal">Recommend</h4>
+            <a routerLink="/recommend" class="Re-link text-danger">See all<i class="bi bi-chevron-right"></i></a>
+        </div>
+        <div class="Re-movies">
+            <div class="Re-movieList">
+                <div class="Re-movieItem" *ngFor="let movie of reMoviesList" (click)="onSelectMovie(movie)" routerLink="/booking">
+                    <img src={{movie.movieImg}}>
+                    <div class="RemovieDes">
+                        <h5 style="margin: 0 3px;" class="fs-5">{{movie.movieName}}</h5>
+                        <span style="margin: 0 3px;">{{movie.language}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Premiere -->
+<div class="Pre-outer">
+    <div class="Pre-inner">
+        <div class="Pre-text">
+            <i class="bi bi-play-circle-fill text-danger"></i>
+            <div class="Pre-headline">
+                <h3 class="text-white fs-3" style="margin: 0;">PREMIERE</h3>
+                <span class="text-white">Watch new movies at home, every Friday</span>
+            </div>
+        </div>
+        <div class="Pre-movies">
+            <div class="Pre-movieList">
+                <div class="Pre-movieItem" *ngFor="let movie of preMoviesList">
+                    <img src={{movie.movieImg}}>
+                    <div class="PremovieDes">
+                        <h5 style="margin: 0 3px;" class="text-white fs-5">{{movie.movieName}}</h5>
+                        <span style="margin: 0 3px;" class="text-white">{{movie.language}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

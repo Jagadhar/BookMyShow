@@ -1,0 +1,21 @@
+<div class="shows">
+    <div class="movieDetails">
+      <div class="movieImg"><img src={{selectedMovie.movieImg}}></div>
+      <div class="contain">
+        <div class="selected">Selected Movie : {{selectedMovie.movieName}}</div>
+        <div class="selected">Per Ticket Price: {{selectedMovie.ticketRate | currency:'INR'}}</div>
+        <div class="selected">Selected Show : {{selectedShow}} </div>
+      </div>
+    </div>
+    <div class="showsList">
+      <!-- {{selectedMovie| json}}
+      {{selectedShow| json}} -->
+      <div class="listItem" *ngFor="let show of selectedMovie?.shows">
+        <button class="btn" type="submit" [ngClass]="selectedShow == show? 'btn-success':'btn-secondary'"
+          (click)="onSelected(show)">{{show}}</button>
+      </div>
+    </div>
+    <div class="button" *ngIf="selectedShow != ''">
+      <button class="btn btn-primary" type="submit" routerLink="/seatSelection" (click)="onSelectedShow(selectedShow)">Select Seat</button>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="header-content">
+    <div class="logo">
+        <div class="name">BookMyShow</div>
+    </div>
+    <!-- unknown user nav section view -->
+    <div class="nav" *ngIf="!authenticated">
+        <div class="button">
+            <button class="btn btn-danger login" routerLink="/login">Login</button>
+        </div>
+    </div>
+    <!-- authenticated user nav section view -->
+    <div class="nav" *ngIf="authenticated">
+        <div class="nav-sec">
+            <a routerLink="/home">Home</a>
+            <a routerLink="/allMovies">All Movies</a>
+            <a [routerLink]="['/home']" fragment="footer-section">About us</a>
+            <a routerLink="/dashboard" >Dashboard</a>
+        </div>
+        <div class="button">
+            <button class="btn btn-danger" routerLink="/login" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.containerOuter{
+    /* border: 2px solid black; */
+    background-color: #cecccc;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerInner{
+    /* border: 2px solid red; */
+    width: 80%;
+    height: 100%;
+    padding-top: 50px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4,0fr);
+}
+.moviesList{
+    /* border: 2px solid blue; */
+    margin: 10px;
+}
+
+.moviesList img{
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+}
+
+.movieDes{
+    /* border: 2px solid red; */
+    margin-left: 5px;
+}
+
+.moviesList img,
+.movieDes h5,span:hover{
+    cursor: pointer;
+}

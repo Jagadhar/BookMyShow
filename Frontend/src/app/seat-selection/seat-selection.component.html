@@ -1,0 +1,35 @@
+<div class="main">
+    <div class="seat-examlpe">
+        <ul class="showcase">
+            <li>
+                <div class="seat"></div>
+                <small>N/A</small>
+            </li>
+            <li>
+                <div class="seat selected"></div>
+                <small>Selected</small>
+            </li>
+            <li>
+                <div class="seat occupied"></div>
+                <small>Occupied</small>
+            </li>
+        </ul>
+        <div class="container">
+            <!-- {{selectedShowTime| json}} -->
+            <!-- {{bookingDetails| json}} -->
+            <!-- {{selectedMovie | json}} -->
+            <!-- {{bookedSeats| json}} -->
+            <!-- {{bookSeatOfList | json}} -->
+            <div class="screen"><img src={{selectedMovie.movieImg}}></div>
+
+            <div class="row" *ngFor="let rows of selectedMovie?.seatRows">
+                <!-- {{rows.row}} -->
+                <div class="seat" [ngClass]="checkedIfSeatIsBooked(rows.row,seat)? 'occupied': checkedIfSeatIsSelected(rows.row,seat)? 'selected':''" (click)="bookSeat(rows.row,seat)" *ngFor="let seat of getSeatNoArray(rows.noOfSeats)">{{seat}}</div>
+            </div>   
+        </div>
+        <p class="text">You have selected <span id="count">{{selectedSeatCount}}</span> seats for a price of <span id="total">{{totalCost | currency:'INR'}}</span></p>
+        <div class="button">
+            <button class="btn btn-primary" (click)="bookMovie(email,selectedMovie.movieName,selectedShowTime,bookSeatOfList,totalCost)" (click)="postBookingData()" routerLink="/home">Book Ticket</button>
+        </div>
+    </div>
+</div>

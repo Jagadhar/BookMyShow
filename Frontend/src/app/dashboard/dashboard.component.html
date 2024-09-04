@@ -1,0 +1,93 @@
+<div class="outerContainer">
+    <div class="leftSide">
+        <!-- user img and name view  -->
+        <div class="user">
+            <div class="img">
+                <div class="icon">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+            </div>
+            <div class="userDetails">
+                <div class="name">{{name}}</div>
+            </div>
+        </div>
+
+        <!-- user details update section -->
+         <div class="updateSection">
+            <div class="userInfo" (click)="userInfo()"><i class="bi bi-person-fill"></i><span>User Info</span></div>
+            <div class="booking" (click)="bookingList()"><i class="bi bi-gift-fill"></i><span>My Booking</span></div>
+            <div class="changePassword" (click)="changePassword()"><i class="bi bi-lock-fill"></i><span>Change Password</span></div>
+            <div class="logOut" ><i class="bi bi-box-arrow-right"></i><span>Log Out</span></div>
+         </div>
+    </div>
+
+    <!-- Right side welcome message view -->
+    <div class="rightSideMeg" *ngIf="!message">
+        <div class="message">
+            <h1>Welcome</h1>
+        </div>
+    </div>
+
+    <!--Right side User information view panel -->
+    <div class="rightSide" *ngIf="message">
+        <div class="userDetails" *ngIf="user">
+            <div class="name">Name:&nbsp;&nbsp;&nbsp;{{name}}</div>
+            <div class="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;{{email}}</div>
+            <div class="phone">Phone:&nbsp;&nbsp;{{phone}}</div>
+            <div class="update">
+                <div class="update-details">Update Details<i class="bi bi-pencil-square"></i></div>
+            </div>
+        </div>
+        <div class="bookingDetails" *ngIf="booking && bookings.length > 0;" >
+            <!-- <h2>Bookings for User {{email}}</h2> -->
+            <!-- {{bookings | json}} -->
+            <table>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Show Time</th>
+                    <th>Seat No.</th>
+                    <th>Ticket Price</th>
+                    <th>Booking Status</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let booking of bookings">
+                    <!-- <td>{{bookingDetails.movieName}}</td>
+                    <td>{{bookingDetails.showTime}}</td>
+                    <td class="seatData">
+                        <span *ngFor="let row of bookingDetails.rows">{{ row.rowName }} - {{row.seatNo}} ; </span>  
+                    </td>
+                    <td>{{bookingDetails.ticketPrice}}</td>
+                    <td>Successfull</td>
+                    <td><button class="btn btn-danger">Cancel</button></td> -->
+                    <td>{{ booking.movieName }}</td>
+                    <td>{{ booking.showTime }}</td>
+                    <td class="seatData">
+                        <span *ngFor="let row of booking.rows">{{ row.rowName }} - {{row.seatNo}} ; </span>
+                    </td>
+                    <td>{{ booking.ticketPrice }}</td>
+                    <td [ngClass]="{'text-danger': booking.status === 'Canceled','text-primary': booking.status === 'Successful'}">{{booking.status}}</td>
+                    <td><button class="btn btn-danger" (click)="updateStatus(booking._id, 'Canceled')" *ngIf="booking.status === 'Successful'" (click)="reloadPage()">Cancel</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="changePassword" *ngIf="password">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Old Password:</label>
+                    <input type="text" placeholder="enter old Password">
+                </div>
+                <div class="form-group">
+                    <label for="">New Password:</label>
+                    <input type="text" placeholder="new password">
+                </div>
+                <div class="form-group">
+                    <label for="">Confirm Password:</label>
+                    <input type="text" placeholder="confirm password">
+                </div>
+                <div class="updateButton">
+                    <div class="change-button">Update Password<i class="bi bi-pencil-square"></i></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

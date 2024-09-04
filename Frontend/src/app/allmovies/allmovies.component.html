@@ -1,0 +1,37 @@
+<!-- movie search section -->
+<div class="search">
+    <div class="searchInner">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search...." [(ngModel)]="searchMovie">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSearch()">Submit</button>
+</div>
+
+
+<!-- moviesList -->
+<!-- movieList search by name & serach by language -->
+<div class="containerOuter" *ngIf="searchList">
+    <div class="containerInner">
+        <div class="moviesList" *ngFor="let movie of filteredMoviesList" (click)="onSelectMovie(movie)" routerLink="/booking">
+            <img src={{movie.movieImg}}>
+            <div class="movieDes">
+                <h5 style="margin: 0;" class="fs-5">{{movie.movieName}}</h5>
+                <span>{{movie.language}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- normal movie list show -->
+<div class="containerOuter" *ngIf="!searchList" >
+    <div class="containerInner">
+        <div class="moviesList" *ngFor="let movie of movieList" (click)="onSelectMovie(movie)" routerLink="/booking">
+            <img src={{movie.movieImg}}>
+            <div class="movieDes">
+                <h5 style="margin: 0;" class="fs-5">{{movie.movieName}}</h5>
+                <span>{{movie.language}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+

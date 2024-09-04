@@ -1,0 +1,11 @@
+<div class="containerOuter">
+    <div class="containerInner">
+        <div class="moviesList" *ngFor="let movie of movieList" (click)="onSelectMovie(movie)" routerLink="/booking">
+            <img src={{movie.movieImg}}>
+            <div class="movieDes">
+                <h5 style="margin: 0;" class="fs-5">{{movie.movieName}}</h5>
+                <span>{{movie.language}}</span>
+            </div>
+        </div>
+    </div>
+</div>

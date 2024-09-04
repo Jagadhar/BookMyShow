@@ -1,0 +1,128 @@
+#carouselBanner{
+    /* border: 2px solid red; */
+    margin: 10px;
+    border-radius: 5px;
+}
+.carousel-item img{
+    /* border: 2px solid black; */
+    height: 180px;
+}
+/* .carousel-control-prev{
+    border: 2px solid red;
+}
+
+.carousel-control-next{
+    border: 2px solid red;
+} */
+
+/* Recommendation */
+.Re-outer{
+    /* border: 2px solid red; */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Re-inner{
+    /* border: 2px solid black; */
+    width: 75%;
+    height: 100%;
+}
+.Re-inner .Re-text{
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Re-text .Re-headline{
+    margin-left: 5px;
+    /* border: 2px solid red; */
+}
+.Re-text .Re-link{
+    margin-right: 5px;
+    text-decoration: none;
+    /* border: 2px solid red; */
+}
+.Re-inner .Re-movies{
+    /* border: 2px solid blue; */
+    width: 100%;
+    height: 90%;
+}
+.Re-inner .Re-movieList{
+    /* border: 2px solid black; */
+    height: 100%;
+    display: flex;
+}
+.Re-movieList .Re-movieItem{
+    /* border: 2px solid red; */
+    margin: 0 7px;
+    width: 20%;
+    height: 100%;
+    
+}
+.Re-movieList img{
+    border-radius: 8px;
+    width: 100%;
+    height: 85%;
+}
+
+/* Premiere */
+.Pre-outer{
+    /* border: 2px solid red; */
+    height: 500px;
+    padding:30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(67, 74, 71);
+}
+.Pre-inner{
+    /* border: 2px solid black; */
+    width: 75%;
+    height: 100%;
+}
+.Pre-inner .Pre-text{
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 18%;
+    display: flex;
+}
+.Pre-inner .Pre-text .bi{
+    /* border: 2px solid red; */
+    font-size: 60px;
+}
+.Pre-text .Pre-headline{
+    /* border: 2px solid green; */
+    padding-top: 8px;
+    padding-left: 10px;
+}
+.Pre-inner .Pre-movies{
+    /* border: 2px solid blue; */
+    width: 100%;
+    height: 80%;
+    margin-top: 10px;
+}
+.Pre-inner .Pre-movieList{
+    /* border: 2px solid black; */
+    height: 100%;
+    display: flex;
+}
+.Pre-movieList .Pre-movieItem{
+    /* border: 2px solid red; */
+    margin: 0 7px;
+    width: 20%;
+    height: 100%;
+    
+}
+.Pre-movieList img{
+    border-radius: 8px;
+    width: 100%;
+    height: 85%;
+}
+
+.Re-movieItem img,h5,span,
+.Pre-movieItem img,h5,span:hover{
+    cursor: pointer;
+}

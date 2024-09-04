@@ -1,0 +1,191 @@
+.outerContainer{
+    display: flex;
+}
+
+.leftSide{
+    width:30%;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
+}
+.user{
+    background-color: rgb(228, 230, 230);
+}
+.img{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+}
+.icon{
+    /* border: 2px solid green; */
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon i{
+    font-size: 110px;
+}
+.leftSide .userDetails{
+    width: auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.leftSide .userDetails .name{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+
+/* Dashboard button section */
+.updateSection{
+    /* border: 2px solid green; */
+    padding: 0px 0 0 0px;
+}
+.userInfo , .booking , .changePassword, .logOut{
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+.userInfo i, .booking i, .changePassword i, .logOut i{
+    padding-right: 15px;
+}
+.userInfo:hover , .booking:hover, .changePassword:hover, .logOut:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.rightSideMeg{
+    width: 70%;
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message{
+    text-align: center;
+}
+h1{
+    font-weight: bold;
+    font-size: 12vh;
+}
+.rightSide{
+    width: 70%;
+    /* border: 2px solid blue; */
+}
+
+/* User Details */
+
+.rightSide .userDetails{
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    margin: 20px 0 0 150px;
+    background-color: #f0f0f0;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.rightSide .userDetails .name, .email, .phone{
+    font-size: large;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    height: 70px;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+}
+.rightSide .userDetails .update{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+.update .updateDetails{
+    font-size: large;
+}
+.update .updateDetails:hover , .bi:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+/* Booking Details */
+
+.bookingDetails{
+    /* border: 2px solid red; */
+    padding: 25px 0 0 45px;
+}
+table {
+    width: 90%;
+    /* border: 2px solid #100808; */
+}
+th, td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
+}
+th{
+    background-color: rgb(157, 155, 153);
+}
+td{
+    background-color: rgb(228, 230, 230);
+}
+.seatData{
+    text-align:start;
+    width: 205px;
+}
+
+
+/* Change Password */
+
+.rightSide .changePassword{
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    margin: 20px 0 0 150px;
+    background-color: #f0f0f0;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.rightSide .changePassword .form-group{
+    font-size: large;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    height: 70px;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+}
+.changePassword .form-group label{
+    /* border: 2px solid red; */
+    width: 30%;
+}
+.changePassword .form-group input{
+    width: 65%;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.changePassword .updateButton{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+.updateButton .changeButton{
+    font-size: large;
+}
+.updateButton .changeButton:hover ,.bi:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

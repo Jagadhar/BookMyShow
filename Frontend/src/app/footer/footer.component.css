@@ -1,0 +1,97 @@
+.containar{
+    background-color: rgb(112, 112, 112);
+    height: 400px;
+}
+.containar .contact-us{
+    padding: 20px 0px;
+    display: flex;
+    margin-left: 150px;
+}
+.containar .contact-us h5,h6{
+    color: #fff;
+}
+
+.contact-us h6{
+    margin-left: 20px;
+    padding-top: 5px;
+    /* border: 2px solid red; */
+}
+.containar .contact-us button{
+    margin-left: 500px;
+}
+
+.containar .service{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(84, 84, 84);
+    padding: 15px 0px;
+    color: #bdbbbb;
+    /* border: 2px solid red; */
+}
+.containar .service .customer-care{
+    /* border: 2px solid blue; */
+    text-align: center;
+    cursor: pointer;
+}
+.containar .service .mail{
+    text-align: center;
+    cursor: pointer;
+    margin-left: 550px;
+    /* border: 2px solid black; */
+}
+/* .title-containar{
+    margin: 0 50px;
+}
+.title{
+    text-align: center;
+    position: relative;
+}
+.title::before{
+    left: 0;
+    top: 50%;
+    width: 600px;
+}
+.title::after{
+    right: 0;
+    top: 50%;
+    width: 600px;
+}
+
+.title::before, .title::after{
+    content:"";
+    height: 2px;
+    background-color: #000;
+    display: block;
+    position: absolute;
+} */
+
+.icons{
+    display: flex;
+    justify-content: center;
+    /* column-gap: 5px;
+    border: 2px solid blue; */
+}
+.icons .icon{
+    margin: 50px 0px 5px 0px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    /* border: 2px solid red;
+    background-color: #343333; */
+}
+
+.icons .icon .bi{
+    cursor: pointer;
+    font-size: 30px;
+    color: #d4d3d3;
+}
+
+.copy{
+    text-align: center;
+}
+.span{
+    margin: 0 80px;
+    text-align: center;
+}
+
+
