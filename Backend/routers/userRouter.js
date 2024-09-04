@@ -5,9 +5,6 @@ import jwt from 'jsonwebtoken';
 
 const router = Router();
 
-const createToken = (id) => {
-    return jwt.sign({ _id: id }, process.env.JWT_SECRET);
-}
 
 // Register a new user
 router.post('/register', async (req, res) => {
@@ -28,8 +25,10 @@ router.post('/register', async (req, res) => {
 
         const user = await newUser.save();
 
-        const token = createToken(user._id);
-        res.cookie('jwt', token, {
+        const {_id} = await user.toJSON();
+        const token = jwt.sign({_id:_id},process.env.JWT_SECRET);
+
+        res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
         });
@@ -59,9 +58,10 @@ router.post('/login', async (req, res) => {
             return res.json({ success: false, message: "Password is Incorrect" })
         }
 
-        const token = createToken(user._id);
+        
+        const token = jwt.sign({_id:user._id},process.env.JWT_SECRET);
 
-        res.cookie('jwt', token, {
+        res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
         });
