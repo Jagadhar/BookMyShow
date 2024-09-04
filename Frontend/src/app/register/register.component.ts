@@ -59,7 +59,7 @@ export class RegisterComponent {
       Swal.fire("Error","Please enter a valid phone number","error")
     }
     else{
-      this.http.post("https://mywebpage-backend.onrender.com/api/register",user,{
+      this.http.post("https://bookmyshow-backend-q1x9.onrender.com/api/register",user,{
         withCredentials:true
       })
       .subscribe( () => this.router.navigate(['/home']),(err) =>{
