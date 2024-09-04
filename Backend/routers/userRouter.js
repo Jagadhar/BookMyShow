@@ -31,11 +31,9 @@ router.post('/register', async (req, res) => {
         res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
+            sameSite: "None",
+            secure: true, // Ensure this if using HTTPS
         });
-
-        const cookie = req.cookies['jwt'];
-        console.log(token);
-        console.log(cookie);
 
         res.json({ success: true, token, message: "Registration && Login successful" });
     } catch (error) {
@@ -64,11 +62,9 @@ router.post('/login', async (req, res) => {
         res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
+            sameSite: "None",
+            secure: true, // Ensure this if using HTTPS
         });
-
-        const cookie = req.cookies['jwt'];
-        console.log(token);
-        console.log(cookie);
 
         res.json({ success: true, token, message: "Login successful" });
 
@@ -80,6 +76,7 @@ router.post('/login', async (req, res) => {
 
 router.get("/user", async (req, res) => {
     try {
+        console.log("Cookies: ", req.cookies);
         const cookie = req.cookies['jwt'];
         // Check if token exists
         if (!cookie) {
