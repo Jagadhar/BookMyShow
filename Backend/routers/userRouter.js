@@ -100,7 +100,7 @@ router.get("/user", async (req, res) => {
 
         const { password, ...data } = await user.toJSON();
 
-        res.json({ success: true, data });
+        res.send(data)
     } catch (err) {
         console.log(err);
         res.status(500).json({ success: false, message: "Server error" });
