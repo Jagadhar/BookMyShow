@@ -1,4 +1,4 @@
-import { response, Router } from 'express';
+import { Router } from 'express';
 import User from '../models/userModel.js';
 import jwt from 'jsonwebtoken';
 
