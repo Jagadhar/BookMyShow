@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 const router = Router();
 
 const createToken = (id) => {
-    return jwt.sign({ _id: id }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    return jwt.sign({ _id: id }, process.env.JWT_SECRET);
 }
 
 // Register a new user
