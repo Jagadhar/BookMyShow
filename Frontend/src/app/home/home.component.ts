@@ -124,7 +124,7 @@ export class HomeComponent {
   message = '';
   
   ngOnInit(): void {
-    this.http.get('https://mywebpage-backend.onrender.com/api/user', { withCredentials: true })
+    this.http.get('https://bookmyshow-backend-q1x9.onrender.com/api/user', { withCredentials: true })
       .subscribe((res: any) => {
           this.message = `Hi ${res.name}`;
           Emitters.authEmitter.emit(true);
