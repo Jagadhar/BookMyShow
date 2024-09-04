@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ['http://localhost:4200'],
+  origin: ['https://bookmyshow-3cuu.onrender.com'],
   credentials: true,
 }));
 app.use(cookieParser());
