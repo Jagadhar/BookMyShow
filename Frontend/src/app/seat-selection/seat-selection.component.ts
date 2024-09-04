@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Emitters } from '../Emitters/Emitter';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-seat-selection',
@@ -133,6 +134,7 @@ export class SeatSelectionComponent {
     this.http.post(apiUrl, this.bookingDetails)
       .subscribe({
         next: (response) => {
+          Swal.fire("Booking Successful");
           console.log('Booking saved successfully!', response);
           //console.log(this.bookingDetails);
         },
