@@ -24,7 +24,14 @@
 
             <div class="row" *ngFor="let rows of selectedMovie?.seatRows">
                 <!-- {{rows.row}} -->
-                <div class="seat" [ngClass]="checkedIfSeatIsBooked(rows.row,seat)? 'occupied': checkedIfSeatIsSelected(rows.row,seat)? 'selected':''" (click)="bookSeat(rows.row,seat)" *ngFor="let seat of getSeatNoArray(rows.noOfSeats)">{{seat}}</div>
+                <div class="seat" [ngClass]="{
+                    'occupied': checkedIfSeatIsBooked(rows.row, seat),
+                    'selected': checkedIfSeatIsSelected(rows.row, seat),
+                    'disabled': checkedIfSeatIsBooked(rows.row, seat)
+                  }"
+                  (click)="!checkedIfSeatIsBooked(rows.row, seat) && bookSeat(rows.row, seat)" 
+                  *ngFor="let seat of getSeatNoArray(rows.noOfSeats)">{{seat}}
+                </div>
             </div>   
         </div>
         <p class="text">You have selected <span id="count">{{selectedSeatCount}}</span> seats for a price of <span id="total">{{totalCost | currency:'INR'}}</span></p>
