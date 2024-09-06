@@ -84,7 +84,7 @@ export class SeatSelectionComponent {
   }
 
   checkedIfSeatIsBooked(row: any, seat: any) {
-    const isDataExit = this.bookedSeats.find(m => m.row == row && m.seatNumber == seat);
+    const isDataExit = this.bookedSeats.find(m => m.rowName == row && m.seatNo == seat);
     if (isDataExit == undefined) {
       return false;
     } else {
