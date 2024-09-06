@@ -57,8 +57,8 @@ router.get('/booking-seat', async (req, res) => {
             status: 'Successful'
         });
         const rowsAndSeats = bookings.flatMap(booking => booking.rows.map(row => ({
-            row: row.rowName,
-            seatNumber: row.seatNo,
+            rowName: row.rowName,
+            seatNo: row.seatNo,
             showTime: booking.showTime
         })));
 
