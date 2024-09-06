@@ -55,7 +55,7 @@ export class SeatSelectionComponent {
     // Check if the seat is already in the selected list
     const isDataExit = this.bookSeatOfList.find(m => m.rowName == rowName && m.seatNo == seatNo);
     // Only proceed if the seat is not booked and not already selected
-    if (isDataExit == undefined && isAlreadyBooked == undefined) {
+    if (!isDataExit && !isAlreadyBooked) {
       const obj = {
         rowName: rowName,
         seatNo: seatNo,
@@ -67,7 +67,7 @@ export class SeatSelectionComponent {
       // If the seat is already in the selected list, remove it
       const rowIndexToDelete = this.bookSeatOfList.findIndex(m => m.rowName == rowName && m.seatNo == seatNo);
       this.bookSeatOfList.splice(rowIndexToDelete, 1);
-      this.selectedSeatCount--;
+      this.selectedSeatCount = Math.max(0, this.selectedSeatCount - 1);
     }
     this.totalCost = Number(this.selectedMovie.ticketRate) * Number(this.selectedSeatCount);
     debugger;
